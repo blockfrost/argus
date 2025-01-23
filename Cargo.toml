@@ -1,0 +1,8 @@
+[package]
+name = "argus"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+miette = { version = "7.4.0", features = ["fancy"] }
+tokio = { version = "1.43.0", features = ["full"] }
