@@ -1,0 +1,24 @@
+{
+  "db_name": "MySQL",
+  "query": "select slot from blocks",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "slot",
+        "type_info": {
+          "type": "LongLong",
+          "flags": "",
+          "max_size": 20
+        }
+      }
+    ],
+    "parameters": {
+      "Right": 0
+    },
+    "nullable": [
+      true
+    ]
+  },
+  "hash": "7bda9e4b40af35b5966c20e91e62d48c5a29c1ef59a7dce9b7054cfd15cfb889"
+}

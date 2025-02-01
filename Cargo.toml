@@ -4,5 +4,13 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+config = "0.15.7"
+dotenvy = "0.15.7"
 miette = { version = "7.4.0", features = ["fancy"] }
+serde = { version = "1.0.217", features = ["derive"] }
+sqlx = { version = "0.8.3", features = [
+    "mysql",
+    "runtime-tokio",
+    "tls-rustls",
+] }
 tokio = { version = "1.43.0", features = ["full"] }
