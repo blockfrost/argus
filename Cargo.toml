@@ -2,6 +2,7 @@
 name = "argus"
 version = "0.1.0"
 edition = "2021"
+repository = "https://github.com/blockfrost/argus"
 
 [dependencies]
 config = "0.15.7"
@@ -14,3 +15,8 @@ sqlx = { version = "0.8.3", features = [
     "tls-rustls",
 ] }
 tokio = { version = "1.43.0", features = ["full"] }
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
