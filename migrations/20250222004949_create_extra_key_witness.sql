@@ -1,0 +1,6 @@
+CREATE TABLE extra_key_witness (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    hash VARBINARY(28) NOT NULL,
+    tx_id BIGINT NOT NULL,
+    FOREIGN KEY (tx_id) REFERENCES tx (id)
+);

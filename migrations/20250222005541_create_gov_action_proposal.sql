@@ -1,0 +1,30 @@
+CREATE TABLE gov_action_proposal (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    tx_id BIGINT NOT NULL,
+    index BIGINT NOT NULL,
+    prev_gov_action_proposal BIGINT,
+    deposit BIGINT UNSIGNED NOT NULL,
+    return_address BIGINT NOT NULL,
+    expiration INT UNSIGNED NOT NULL,
+    voting_anchor_id BIGINT NOT NULL,
+    type ENUM (
+        'ParameterChange',
+        'HardForkInitiation',
+        'TreasuryWithdrawals',
+        'NoConfidence',
+        'NewCommittee',
+        'NewConstitution',
+        'InfoAction'
+    ) NOT NULL,
+    description JSON NOT NULL,
+    param_proposal BIGINT,
+    ratified_epoch INT UNSIGNED,
+    enacted_epoch INT UNSIGNED,
+    dropped_epoch INT UNSIGNED,
+    expired_epoch INT UNSIGNED,
+    FOREIGN KEY (tx_id) REFERENCES tx (id),
+    FOREIGN KEY (prev_gov_action_proposal) REFERENCES gov_action_proposal (id),
+    FOREIGN KEY (return_address) REFERENCES stake_address (id),
+    FOREIGN KEY (voting_anchor_id) REFERENCES voting_anchor (id),
+    FOREIGN KEY (param_proposal) REFERENCES param_proposal (id)
+);

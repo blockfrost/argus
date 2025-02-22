@@ -7,6 +7,7 @@ repository = "https://github.com/blockfrost/argus"
 [dependencies]
 config = "0.15.7"
 dotenvy = "0.15.7"
+gasket = { version = "0.9.0", features = ["derive"] }
 miette = { version = "7.4.0", features = ["fancy"] }
 serde = { version = "1.0.217", features = ["derive"] }
 sqlx = { version = "0.8.3", features = [

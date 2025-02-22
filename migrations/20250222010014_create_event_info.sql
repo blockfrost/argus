@@ -1,0 +1,8 @@
+CREATE TABLE event_info (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    tx_id BIGINT NOT NULL,
+    epoch INT UNSIGNED NOT NULL,
+    type VARCHAR(50) NOT NULL,
+    explanation VARCHAR(255) NOT NULL,
+    FOREIGN KEY (tx_id) REFERENCES tx (id)
+);

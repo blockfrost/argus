@@ -1,0 +1,6 @@
+CREATE TABLE tx_cbor (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    tx_id BIGINT NOT NULL,
+    bytes BLOB NOT NULL,
+    FOREIGN KEY (tx_id) REFERENCES tx (id)
+);

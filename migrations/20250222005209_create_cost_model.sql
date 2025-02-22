@@ -1,0 +1,5 @@
+CREATE TABLE cost_model (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    hash VARBINARY(32) NOT NULL,
+    costs JSON NOT NULL
+);

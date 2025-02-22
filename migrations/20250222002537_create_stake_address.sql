@@ -1,0 +1,6 @@
+CREATE TABLE stake_address (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    hash_raw VARBINARY(29) NOT NULL,
+    view VARCHAR(100) NOT NULL UNIQUE,
+    script_hash VARBINARY(28)
+);

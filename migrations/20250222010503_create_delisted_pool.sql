@@ -1,0 +1,4 @@
+CREATE TABLE delisted_pool (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    hash_raw VARBINARY(28) NOT NULL
+);
