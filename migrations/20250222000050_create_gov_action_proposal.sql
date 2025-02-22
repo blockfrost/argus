@@ -1,7 +1,7 @@
 CREATE TABLE gov_action_proposal (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     tx_id BIGINT NOT NULL,
-    index BIGINT NOT NULL,
+    `index` BIGINT NOT NULL,
     prev_gov_action_proposal BIGINT,
     deposit BIGINT UNSIGNED NOT NULL,
     return_address BIGINT NOT NULL,

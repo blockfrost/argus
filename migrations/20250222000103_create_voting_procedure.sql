@@ -1,7 +1,7 @@
 CREATE TABLE voting_procedure (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     tx_id BIGINT NOT NULL,
-    index INT NOT NULL,
+    `index` INT NOT NULL,
     gov_action_proposal_id BIGINT NOT NULL,
     voter_role ENUM ('ConstitutionalCommittee', 'DRep', 'SPO') NOT NULL,
     committee_voter BIGINT,

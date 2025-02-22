@@ -1,7 +1,7 @@
 CREATE TABLE param_proposal (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     epoch_no INT UNSIGNED,
-    key VARBINARY(28),
+    `key` VARBINARY(28),
     min_fee_a BIGINT UNSIGNED,
     min_fee_b BIGINT UNSIGNED,
     max_block_size BIGINT UNSIGNED,

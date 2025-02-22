@@ -12,7 +12,7 @@ CREATE TABLE redeemer (
         'voting',
         'proposing'
     ) NOT NULL,
-    index INT UNSIGNED NOT NULL,
+    `index` INT UNSIGNED NOT NULL,
     script_hash VARBINARY(28) NOT NULL,
     redeemer_data_id BIGINT,
     FOREIGN KEY (tx_id) REFERENCES tx (id),
