@@ -17,16 +17,4 @@ CREATE TABLE block (
     op_cert_counter BIGINT UNSIGNED,
     FOREIGN KEY (previous_id) REFERENCES block (id),
     FOREIGN KEY (slot_leader_id) REFERENCES slot_leader (id)
-)
-PARTITION BY
-    RANGE (id) (
-        PARTITION p0
-        VALUES
-            LESS THAN (1000000),
-            PARTITION p1
-        VALUES
-            LESS THAN (2000000),
-            PARTITION pmax
-        VALUES
-            LESS THAN (MAXVALUE)
-    );
+);

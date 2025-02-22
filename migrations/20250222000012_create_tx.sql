@@ -13,16 +13,4 @@ CREATE TABLE tx (
     script_size INT UNSIGNED,
     treasury_donation BIGINT UNSIGNED,
     FOREIGN KEY (block_id) REFERENCES block (id)
-)
-PARTITION BY
-    RANGE (id) (
-        PARTITION p0
-        VALUES
-            LESS THAN (1000000),
-            PARTITION p1
-        VALUES
-            LESS THAN (2000000),
-            PARTITION pmax
-        VALUES
-            LESS THAN (MAXVALUE)
-    );
+);
