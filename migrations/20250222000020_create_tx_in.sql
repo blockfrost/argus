@@ -7,16 +7,4 @@ CREATE TABLE tx_in (
     FOREIGN KEY (tx_in_id) REFERENCES tx (id),
     FOREIGN KEY (tx_out_id) REFERENCES tx (id),
     FOREIGN KEY (redeemer_id) REFERENCES redeemer (id)
-)
-PARTITION BY
-    RANGE (id) (
-        PARTITION p0
-        VALUES
-            LESS THAN (1000000),
-            PARTITION p1
-        VALUES
-            LESS THAN (2000000),
-            PARTITION pmax
-        VALUES
-            LESS THAN (MAXVALUE)
-    );
+);
