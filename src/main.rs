@@ -1,19 +1,18 @@
-use argus::config::IndexerConfig;
+use argus::Cli;
+
 use miette::IntoDiagnostic;
-use sqlx::MySqlPool;
+use tracing::subscriber::set_global_default;
+use tracing_subscriber::FmtSubscriber;
 
 #[tokio::main]
 async fn main() -> miette::Result<()> {
-    let indexer_config = IndexerConfig::load().into_diagnostic()?;
+    let subscriber = FmtSubscriber::builder()
+        .with_max_level(tracing::Level::DEBUG)
+        .finish();
 
-    let pool = MySqlPool::connect(&indexer_config.database_url)
-        .await
-        .into_diagnostic()?;
+    set_global_default(subscriber).into_diagnostic()?;
 
-    let blocks = sqlx::query!("select slot from blocks")
-        .fetch_all(&pool)
-        .await
-        .into_diagnostic()?;
+    let cli = Cli::default();
 
-    Ok(())
+    cli.exec()
 }

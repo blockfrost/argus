@@ -3,6 +3,7 @@ use serde::Deserialize;
 
 #[derive(Debug, Deserialize)]
 pub struct IndexerConfig {
+    pub dolos_endpoint: String,
     pub database_url: String,
 }
 
